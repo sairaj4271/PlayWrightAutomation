@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","8282","@Web Browser Context-Validating Error login","","Mon Feb 28 21:24:47 IST 2022","passed","Mon Feb 28 21:24:55 IST 2022","","UIBasicstest.spec.js","",""
+"","2344","@Web UI Controls","","Mon Feb 28 21:24:55 IST 2022","passed","Mon Feb 28 21:24:57 IST 2022","","UIBasicstest.spec.js","",""
+"","13947","@Web Client App login for Zara Coat 4","","Mon Feb 28 21:24:47 IST 2022","passed","Mon Feb 28 21:25:01 IST 2022","","ClientAppPO.spec.js","",""
+"","13656","@Web Client App login for Adidas Orignals","","Mon Feb 28 21:25:01 IST 2022","passed","Mon Feb 28 21:25:14 IST 2022","","ClientAppPO.spec.js","",""
+"","8731","@Web Popup validations","","Mon Feb 28 21:24:47 IST 2022","passed","Mon Feb 28 21:24:55 IST 2022","","MoreValidations.spec.js","",""
