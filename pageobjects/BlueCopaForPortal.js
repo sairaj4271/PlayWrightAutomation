@@ -67,10 +67,38 @@ class Portal{
 //} else {
   //console.error('Source or Target not found');
 //}
-await this.page.locator('//p[text()="Input table"]/..').hover();
-await this.page.mouse.down();
-await this.page.locator('//p[text()="No widgets added"]/..').hover();
-await this.page.mouse.up();
+const source = await this.page.locator('//p[text()="Input table"]/..');
+const target = await this.page.locator('//p[text()="No widgets added"]/..');
+
+// Ensure both elements are visible
+await source.scrollIntoViewIfNeeded();
+await target.scrollIntoViewIfNeeded();
+
+const sourceBox = await source.boundingBox();
+const targetBox = await target.boundingBox();
+
+if (sourceBox && targetBox) {
+  // Move to source center and press mouse down
+    await this.page.mouse.move(
+    sourceBox.x + sourceBox.width / 2,
+    sourceBox.y + sourceBox.height / 2
+  );
+  await this.page.mouse.down();
+
+  // Optional: Wait a bit to simulate drag
+  await this.page.waitForTimeout(200);
+
+  // Move to target center
+  await this.page.mouse.move(
+    targetBox.x + targetBox.width / 2,
+    targetBox.y + targetBox.height / 2,
+    { steps: 20 } // smooth move
+  );
+
+  await this.page.waitForTimeout(200); // let drop animation settle
+  await this.page.mouse.up();
+}
+
 
 await expect(this.widget).toBeHidden();
 
@@ -78,7 +106,7 @@ await expect(this.widget).toBeHidden();
 
 
 
-    }
+   }
 
 
 
