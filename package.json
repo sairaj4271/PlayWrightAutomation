@@ -16,12 +16,16 @@
     "@azure/microsoft-playwright-testing": "^1.0.0-beta.6",
     "@cucumber/cucumber": "*",
     "@playwright/test": "^1.51.0",
+    "@types/node": "^24.3.0",
     "@zerostep/playwright": "^0.1.5",
     "allure-playwright": "^2.0.0-beta.15",
+    "cross-env": "^10.0.0",
     "playwright": "^1.54.1",
-    "typescript": "^5.4.5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
+    "dotenv": "^17.2.2",
     "exceljs": "^4.4.0"
   }
 }

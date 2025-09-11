@@ -87,6 +87,6 @@ class LoginPage {
       }
         await this.page.waitForTimeout(5000);
     }
-}
+  }
 
 module.exports = { LoginPage };

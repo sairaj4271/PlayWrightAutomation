@@ -1,34 +1,33 @@
-import {test, expect,Locator,Page} from '@playwright/test';
-
+import { Page, Locator } from '@playwright/test';
 
 export class LoginPage {
-    signInbutton : Locator;
-    userName :Locator;
-    password : Locator;
-    page : Page;
+  private page: Page;
+  private loginMenu: Locator;
+  private usernameInput: Locator;
+  private passwordInput: Locator;
+  private loginButton: Locator;
 
-constructor(page:Page)
-{
+  constructor(page: Page) {
     this.page = page;
-    this.signInbutton= page.locator("[value='Login']");
-    this.userName = page.locator("#userEmail");
-    this.password = page.locator("#userPassword");
+    this.loginMenu = page.locator('(//div[text()="Login"])[1]');
+    this.usernameInput = page.locator('//input[@id="username"]');
+    this.passwordInput = page.locator('//input[@name="password"]');
+    this.loginButton = page.locator('//button[@type="submit"]');
+  }
 
+   async goto(): Promise<void> {
+    
+    await this.page.goto(process.env.BASE_URL!);
+  }
+
+  async clickLoginMenu(): Promise<void> {
+    await this.loginMenu.click();
+  }
+
+  async login(): Promise<void> {
+  
+    await this.usernameInput.fill(process.env.USERNAME!);
+    await this.passwordInput.fill(process.env.PASSWORD!);
+    await this.loginButton.click();
+  }
 }
-
-async goTo()
-{
-    await this.page.goto("https://rahulshettyacademy.com/client");
-}
-
-async validLogin(username:string,password:string)
-{
-    await  this.userName.fill(username);
-     await this.password.fill(password);
-     await this.signInbutton.click();
-     await this.page.waitForLoadState('networkidle');
-
-}
-
-}
-module.exports = {LoginPage};
