@@ -13,7 +13,7 @@ class DataBoxPage {
     this.generatedFileboxName = ''; 
     this.fileInput = page.locator('//input[@type="file"]');
     this.createButton = page.locator('//div[text()[normalize-space() = "Create"]]')
-
+    this.Rename  = page.locator('//*[text()="Rename Line"]')
     
   }
   
@@ -53,7 +53,7 @@ async uploadFileInDatabox() {
    
     await this.page.waitForTimeout(500);
     await this.Next.click();
-      await this.page.waitForTimeout(50000);
+    await this.page.waitForTimeout(50000);
     await expect(this.createButton).toBeVisible({time:50000});
     this.createButton.click();
     await this.page.waitForTimeout(5000);

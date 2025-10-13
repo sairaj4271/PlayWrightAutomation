@@ -13,6 +13,9 @@ while (numd > 0) {
 }
 console.log(rev); // 4321
 
+const revered =Number(numd.toString().split("").reverse("").join(""))
+
+console.log(revered);
 
 let int=45 , rev4=0;
 while(int>0){
@@ -57,3 +60,14 @@ for (let num = 2; num <= 100; num++) {
 
 let str = "hello";
 console.log(str.split("").reverse().join("")); // olleh
+
+let numf = 123;
+let sumf =0;
+let number=numf.toString();
+for (leti=1; i=>numf.lenght; i++){
+   sumf+=Number(number(i));
+         }
+         
+         console.log(sumf)
+
+   

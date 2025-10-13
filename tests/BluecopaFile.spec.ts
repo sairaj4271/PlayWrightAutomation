@@ -20,6 +20,7 @@ test.describe.parallel('Bluecopa Filebox Flow', () => {
 
    
     await fileBoxPage.createFileBoxWithRandomName();
+    
     await fileBoxPage.uploadFileInFilebox(); 
     await fileBoxPage.SuccessfullyUploadedFile();
 

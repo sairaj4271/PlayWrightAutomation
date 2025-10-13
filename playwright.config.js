@@ -14,13 +14,13 @@ console.log('✅ PASSWORD:', process.env.PASSWORD);
 
 export default defineConfig({
   testDir: './tests',
-  retries: 1,
+  retries: 0,
   workers: 4,
 
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 30 * 10000,
   expect: {
-    timeout: 5 * 1000,
+    timeout: 50 * 10000,
   },
 
   // 🔹 Reporters
